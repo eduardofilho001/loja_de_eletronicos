@@ -1,0 +1,10 @@
+Smartphone, 1500.00
+Notebook, 3500.00
+Fone de Ouvido, 200.00
+Televisão, 2500.00
+Mouse, 80.00
+Teclado, 120.00
+Carregador, 60.00
+Caixa de Som, 300.00 
+Monitor, 900.00
+Tablet, 1200.00

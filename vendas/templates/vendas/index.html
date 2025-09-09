@@ -1,71 +1,38 @@
 {% extends 'layout.html' %}
+{% load static %}
+
+{% block estilo %}
+    <link rel="stylesheet" href="{% static 'vendas/style.css' %}">
+{% endblock estilo %}
+    
 
 {% block title %}
     Início
 {% endblock title %}
 
 
-{% block header %}
-    <div class="cabeçalho">
-        <header>
-            <div class="navbar">
-                <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                    <div class="container-fluid">
+{% block conta %}
 
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <div class="login">
+        <a href="{% url 'login' %}" ><button type="button" style="text-align: end;">Login</button></a>
+    </div>
 
-                            <span class="navbar-toggler-icon">
-                                <a href="{% url 'index' %}">techStore</a>
-                            </span>
-                            
-                        </button>
+{% endblock conta %}
 
-                        <div class="login">
-                            <a href="{% url 'login' %}"><button type="button">Login</button></a>
-                        </div>
-                        
-                        <br>
-                        <br>
-                        <fieldset>
-                            <div class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    
-                                <span class="navbar-toggler-icon">
-                                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                                        <div class="navbar-nav">
-            
-                                            <a class="nav-link active" aria-current="page" href="{% url 'lojas' %}">Loja</a>
-            
-                                            <a class="nav-link" href="{% url 'computadores' %}">Computadores</a>
-            
-                                            <a class="nav-link" href="{% url 'tablets' %}">Tablets</a>
-            
-                                            <a class="nav-link" href="{% url 'drones_camera' %}">Drones e Câmaras</a>
-                                            
-                                            <a class="nav-link" href="{% url 'audio' %}">Áudio</a>
-                                            
-                                            <a class="nav-link" href="{% url 'mobile' %}">Mobile</a>
-                                            
-                                            <a class="nav-link" href="{% url 'tv_home_theater' %}">TV e home theater</a>
-                                            
-                                            <a class="nav-link" href="{% url 'tec_vestivel' %}">Tecnologia vestivel</a>
-                                            
-                                            <a class="nav-link" href="{% url 'promocoes' %}">Promoções</a>
-            
-                                        </div>
-                                    </div>
-    
-                                </span>
-                                
-                            </div>
-                        </fieldset>
 
-                    </div>
-                </nav>
-            </div>
-            
-        </header>
-    </div>    
-{% endblock header %}
+{% block navbar %}
+
+    <a class="nav-link active" aria-current="page" href="{% url 'lojas' %}">Lojas</a>
+    <a class="nav-link" href="{% url 'computadores' %}">Computadores</a>
+    <a class="nav-link" href="{% url 'tablets' %}">Tablets</a>
+    <a class="nav-link" href="{% url 'drones_camera' %}">Drones e Câmaras</a>
+    <a class="nav-link" href="{% url 'audio' %}">Áudio</a>
+    <a class="nav-link" href="{% url 'mobile' %}">Mobile</a>
+    <a class="nav-link" href="{% url 'tv_home_theater' %}">TV e home theater</a>
+    <a class="nav-link" href="{% url 'tec_vestivel' %}">Tecnologia vestivel</a>
+    <a class="nav-link" href="{% url 'promocoes' %}">Promoções</a>
+
+{% endblock navbar %}
 
 
 {% block body %}

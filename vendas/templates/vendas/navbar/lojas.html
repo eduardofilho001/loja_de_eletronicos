@@ -1,1 +1,57 @@
-teste
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block estilo %}
+    <link rel="stylesheet" href="{% static 'navbar/style.css' %}">
+{% endblock estilo %}
+
+
+{% block tilte %}
+    Todos os produtos
+{% endblock tilte %}
+
+
+{% block conta %}
+
+{% endblock conta %}
+
+
+{% block navbar %}
+
+    <a class="nav-link active" aria-current="page" href="{% url 'lojas' %}">Lojas</a>
+    <a class="nav-link" href="{% url 'computadores' %}">Computadores</a>
+    <a class="nav-link" href="{% url 'tablets' %}">Tablets</a>
+    <a class="nav-link" href="{% url 'drones_camera' %}">Drones e Câmaras</a>
+    <a class="nav-link" href="{% url 'audio' %}">Áudio</a>
+    <a class="nav-link" href="{% url 'mobile' %}">Mobile</a>
+    <a class="nav-link" href="{% url 'tv_home_theater' %}">TV e home theater</a>
+    <a class="nav-link" href="{% url 'tec_vestivel' %}">Tecnologia vestivel</a>
+    <a class="nav-link" href="{% url 'promocoes' %}">Promoções</a>
+
+{% endblock navbar %}
+
+
+{% block body %}
+    <h1>Todos os produtos</h1>
+
+    <div class="produto">
+        {% for produto in produtos %}
+            <div class="card">
+                <fieldset class="card">
+
+                    <div class="content">
+                        <img src= "/media/{{ produto.imagem }}" alt= "{{ produto.name }}" id="card-image">
+
+                        <br>
+                        <div class="nome">
+                            <a href="{% url 'prod_details' %}" style="margin-bottom: 0.5cm;"><button> {{ produto.nome }} {{ produto.modelo }} </button></a>
+                            <p id="preco" style="margin-bottom: 0.5cm;"> {{ produto.preco_unitario }} </p>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </div>
+
+        {% endfor %}
+    </div>
+{% endblock body %}

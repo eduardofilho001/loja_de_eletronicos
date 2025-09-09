@@ -1,11 +1,14 @@
-{% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'vendas/style.css' %}">
+    
+    {% block estilo %}
+        
+    {% endblock estilo %}
+    
+
     <title>TechStore - 
     {% block title %}
         
@@ -13,11 +16,51 @@
         </title>
 </head>
 <body>
+    <div class="cabeçalho">
+        <header>
+            <div class="navbar">
+                <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                    <div class="container-fluid">
+
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+
+                            <a href="{% url 'index' %}">
+                                <span class="navbar-toggler-icon">
+                                    techStore
+                                </span>
+                            </a>
+                        </button>
+                        
+                        {% block conta %}
+                            
+                        {% endblock conta %}
+                        
+                        <br>
+                        <br>
+
+                        <fieldset id="cabeçalho">
+                            <div class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     
-    {% block header %}
-        
-    {% endblock header %}
-        
+                                <span class="navbar-toggler-icon">
+                                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                                        <div class="navbar-nav">
+                                            {% block navbar %}
+                                            
+                                            {% endblock navbar %}
+                                        </div>
+                                    </div>
+                                        
+                                </span>
+                                    
+                            </div>
+                        </fieldset>
+
+                    </div>
+                </nav>
+            </div>
+            
+        </header>
+    </div>
 
     {% block body %}
         

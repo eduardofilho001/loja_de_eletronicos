@@ -1,0 +1,16 @@
+body {
+    background-color: beige;
+}
+
+.card {
+    width: 4.5cm;
+    height: 4.5cm;
+    display: inline;
+}
+.content {
+    text-align: center;
+}
+#card-image {
+    width: 2cm;
+    height: 3cm;
+}

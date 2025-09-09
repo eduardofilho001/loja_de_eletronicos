@@ -1,11 +1,14 @@
 from django.shortcuts import render
 #from django.http import HttpResponse
 from . import forms
+from .models import Produtos
+from PIL import Image
+
 
 def index(request):
     return render(request, "vendas/index.html")
 
-#.................... CONTA ..................
+#.................... CONTA ..........................
 def login(request):
     return render(request, "vendas/conta/login.html")
 
@@ -15,7 +18,11 @@ def cadastro(request):
 
 #.................... NAVBAR LINKS ..................
 def lojas(request):
-    return render(request, "vendas/navbar/lojas.html")
+    produto = Produtos.objects.all()
+
+    return render(request, "vendas/navbar/lojas.html", {
+        "produtos" : produto,
+    })
 
 def computadores(request):
     return render(request, "vendas/navbar/computadores.html")
@@ -40,4 +47,13 @@ def tec_vestivel(request):
 
 def promocoes(request):
     return render(request, "vendas/navbar/promocoes.html")
+#....................................................
+
+#.................... PRODUTOS ......................
+def prod_details(request):
+    
+    
+    return render(request, "vendas/produtos/prod_details.html", {
+        
+    })
 #....................................................

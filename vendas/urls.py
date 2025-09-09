@@ -20,4 +20,8 @@ urlpatterns = [
     path('tec_vestivel', views.tec_vestivel, name="tec_vestivel"),
     path('promocoes', views.promocoes, name="promocoes"),
 #......................................................
-]
+
+#.................... PRODUTOS ......................
+    path('prod_details', views.prod_details, name="prod_details"),
+#....................................................
+]    
